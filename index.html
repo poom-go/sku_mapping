@@ -54,6 +54,12 @@ h2 {
   margin-top:30px;
 }
 
+h3 {
+  color:#111;
+  font-size:18px;
+  margin-top:26px;
+}
+
 .progress-bar {
   display:flex;
   justify-content:center;
@@ -93,6 +99,14 @@ h2 {
   display:block;
 }
 
+.info-box {
+  background:#f8f9fa;
+  border:1px solid #e4e8eb;
+  border-radius:12px;
+  padding:22px;
+  margin-bottom:18px;
+}
+
 .notice-box {
   background:#fff5f5;
   border:1px solid #ffd6d6;
@@ -111,29 +125,42 @@ h2 {
   margin-bottom:12px;
 }
 
-.info-box {
-  background:#f8f9fa;
-  border:1px solid #e4e8eb;
-  border-radius:12px;
+.highlight-box {
+  background:#f1f4ff;
+  border:2px solid #0040D1;
+  border-radius:14px;
   padding:22px;
-  margin-bottom:18px;
+  margin:24px 0;
+  color:#0040D1;
+  font-weight:900;
+  font-size:18px;
+  text-align:center;
 }
 
-.info-box b {
-  color:#111;
+.path-text {
+  background:#f8f9fa;
+  padding:14px 16px;
+  border-radius:8px;
+  font-weight:700;
+  margin-bottom:20px;
 }
 
-.sku-image-box {
-  margin:18px 0 24px;
+.sku-image-box,
+.connect-image-box {
+  margin:18px auto 24px;
   border:1px solid #e4e8eb;
   border-radius:12px;
   overflow:hidden;
   background:#fff;
   text-align:center;
+  max-width:720px;
 }
 
-.sku-image-box img {
+.sku-image-box img,
+.connect-image-box img {
   max-width:100%;
+  max-height:360px;
+  object-fit:contain;
   display:block;
   margin:0 auto;
 }
@@ -156,8 +183,8 @@ h2 {
 }
 
 .option-circle {
-  width:120px;
-  height:120px;
+  width:112px;
+  height:112px;
   border-radius:50%;
   background:#0040D1;
   color:#fff;
@@ -183,124 +210,39 @@ h2 {
   margin-top:12px;
 }
 
-.option-example-table {
-  width:100%;
-  border-collapse:collapse;
-  margin-top:18px;
-  background:#fff;
-}
-
-.option-example-table th,
-.option-example-table td {
-  border:1px solid #e4e8eb;
-  padding:14px;
-  text-align:center;
-}
-
-.option-example-table th {
-  background:#f1f4ff;
-  color:#111;
-}
-
-.path-text {
-  background:#f8f9fa;
-  padding:14px 16px;
-  border-radius:8px;
-  font-weight:700;
-  margin-bottom:20px;
-}
-
-.sku-standard-table {
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  margin-top:18px;
-}
-
-.sku-standard-head,
-.sku-standard-line {
-  display:grid;
-  grid-template-columns:1.45fr 1fr 1fr;
-  gap:10px;
-}
-
-.sku-head-item,
-.sku-head-good,
-.sku-head-bad {
-  padding:10px 14px;
-  border-radius:8px;
-  font-size:13px;
-  font-weight:900;
-  text-align:center;
-}
-
-.sku-head-item {
-  background:#f8f9fa;
-  border:1px solid #e4e8eb;
-}
-
-.sku-head-good {
-  background:#0040D1;
-  color:#fff;
-}
-
-.sku-head-bad {
-  background:#fff;
-  color:#d93025;
-  border:1px solid #f2b8b5;
-}
-
-.sku-standard-title {
-  background:#f8f9fa;
-  border:1px solid #e4e8eb;
-  border-radius:10px;
-  padding:12px 14px;
-  font-weight:800;
-  font-size:14px;
-  white-space:nowrap;
-  display:flex;
-  align-items:center;
-}
-
-.example-card {
-  padding:12px 14px;
-  border-radius:10px;
-  font-size:14px;
-  font-weight:700;
-  display:flex;
-  align-items:center;
-}
-
-.example-card.good {
-  background:#0040D1;
-  color:#fff;
-}
-
-.example-card.bad {
-  background:#fff;
-  color:#d93025;
-  border:1px solid #f2b8b5;
-}
-
-.basic-info-table {
+.option-example-table,
+.basic-info-table,
+.mapping-table {
   width:100%;
   border-collapse:collapse;
   border:1px solid #e4e8eb;
   font-size:14px;
   margin-top:14px;
+  background:#fff;
 }
 
-.basic-info-table th {
-  background:#f8f9fa;
+.option-example-table th,
+.option-example-table td,
+.basic-info-table th,
+.basic-info-table td,
+.mapping-table th,
+.mapping-table td {
   padding:14px 16px;
   border:1px solid #e4e8eb;
+  vertical-align:top;
+}
+
+.option-example-table th,
+.basic-info-table th,
+.mapping-table th {
+  background:#f8f9fa;
+  color:#111;
+  font-weight:900;
   text-align:left;
 }
 
-.basic-info-table td {
-  padding:16px;
-  border:1px solid #e4e8eb;
-  vertical-align:top;
+.option-example-table td {
+  text-align:center;
 }
 
 .basic-info-table td:first-child {
@@ -312,64 +254,6 @@ h2 {
 .table-note {
   color:#d93025;
   font-weight:700;
-}
-
-.guide-box {
-  border:1px solid #e4e8eb;
-  border-radius:12px;
-  padding:22px;
-  background:#fff;
-  margin-bottom:20px;
-}
-
-.guide-box.green {
-  background:#f3fff7;
-  border-color:#bdecc9;
-}
-
-.guide-title {
-  font-weight:800;
-  margin-bottom:10px;
-}
-
-.mapping-card-wrap {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:22px;
-  margin-top:28px;
-}
-
-.mapping-card {
-  background:#f8f9fa;
-  border:2px solid #e4e8eb;
-  border-radius:16px;
-  padding:32px 24px;
-  text-align:center;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.mapping-card:hover {
-  border-color:#0040D1;
-  background:#f3f6ff;
-  transform:translateY(-3px);
-}
-
-.mapping-card h3 {
-  color:#0040D1;
-  margin-top:0;
-}
-
-.mapping-detail {
-  display:none;
-  margin-top:24px;
-  padding:24px;
-  border:1px solid #e4e8eb;
-  border-radius:14px;
-}
-
-.mapping-detail.active {
-  display:block;
 }
 
 .step-nav {
@@ -401,24 +285,6 @@ h2 {
   color:#555;
 }
 
-.modal-backdrop {
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.48);
-  z-index:9999;
-}
-
-.modal {
-  width:460px;
-  max-width:calc(100% - 40px);
-  background:#fff;
-  margin:180px auto;
-  padding:30px;
-  border-radius:14px;
-  text-align:center;
-}
-
 .faq-btn {
   position:fixed;
   right:24px;
@@ -427,10 +293,11 @@ h2 {
   color:#fff;
   border:none;
   border-radius:999px;
-  padding:14px 22px;
-  font-weight:800;
+  padding:18px 30px;
+  font-size:17px;
+  font-weight:900;
   cursor:pointer;
-  box-shadow:0 6px 16px rgba(0,0,0,.18);
+  box-shadow:0 6px 18px rgba(0,0,0,.24);
   z-index:9998;
 }
 
@@ -438,8 +305,8 @@ h2 {
   display:none;
   position:fixed;
   right:24px;
-  top:82px;
-  width:380px;
+  top:92px;
+  width:400px;
   max-width:calc(100% - 48px);
   max-height:70vh;
   overflow-y:auto;
@@ -497,26 +364,22 @@ h2 {
     font-size:22px;
   }
 
-  .sku-standard-head {
-    display:none;
-  }
-
-  .sku-standard-line {
-    grid-template-columns:1fr;
-  }
-
-  .sku-standard-title {
-    white-space:normal;
-  }
-
-  .mapping-card-wrap {
-    grid-template-columns:1fr;
-  }
-
   .option-circle {
-    width:96px;
-    height:96px;
-    font-size:14px;
+    width:92px;
+    height:92px;
+    font-size:13px;
+  }
+
+  .faq-btn {
+    top:auto;
+    bottom:24px;
+    right:20px;
+  }
+
+  .faq-panel {
+    top:auto;
+    bottom:86px;
+    right:20px;
   }
 }
 </style>
@@ -554,8 +417,8 @@ h2 {
     </div>
 
     <div class="faq-item">
-      <div class="faq-q">Q. 상품 조회/수정에서 일괄 등록하면 안 되나요?</div>
-      <div class="faq-a">권장하지 않습니다. 동일 SKU가 여러 상품번호에 걸려 있는 경우 미입력 SKU 목록만 증가할 수 있고, 스마트스토어 내 SKU 정보는 삭제가 불가합니다.</div>
+      <div class="faq-q">Q. 연결상품까지 꼭 진행해야 하나요?</div>
+      <div class="faq-a">네. SKU 등록만으로는 출고가 진행되지 않으며, 반드시 상품번호 또는 옵션번호에 SKU를 연결해야 재고 연동 및 출고가 가능합니다.</div>
     </div>
   </div>
 </div>
@@ -563,7 +426,7 @@ h2 {
 <div class="container">
 
 <header class="page-header">
-  <img src="Primary Logo.png" class="page-logo" alt="품고 로고" onerror="this.style.display='none'">
+  <img src="Symbol Type Logo.png" class="page-logo" alt="품고 로고" onerror="this.style.display='none'">
   <h1 class="page-title">SKU & 연결상품 등록 가이드</h1>
 </header>
 
@@ -631,52 +494,18 @@ h2 {
     </div>
   </div>
 
-  <h2>SKU명 입력 기준</h2>
-
-  <div class="sku-standard-table">
-
-    <div class="sku-standard-head">
-      <div class="sku-head-item">등록 기준</div>
-      <div class="sku-head-good">올바른 예시</div>
-      <div class="sku-head-bad">잘못된 예시</div>
-    </div>
-
-    <div class="sku-standard-line">
-      <div class="sku-standard-title">1. 스마트스토어 상품명이 아닌 실제 출고되는 상품명으로 입력해주세요.</div>
-      <div class="example-card good">경량 피크닉매트(핑크/중형)</div>
-      <div class="example-card bad">poomgo 경량 피크닉매트 야외 방수 휴대용 한강 돗자리 핑크 중형</div>
-    </div>
-
-    <div class="sku-standard-line">
-      <div class="sku-standard-title">2. 단수 출고 상품(SKU)</div>
-      <div class="example-card good">(송장만부착)양배추즙 100포</div>
-      <div class="example-card bad">양배추즙 100포</div>
-    </div>
-
-    <div class="sku-standard-line">
-      <div class="sku-standard-title">3. 옵션 상품(SKU)</div>
-      <div class="example-card good">품고 맨투맨 S 블랙</div>
-      <div class="example-card bad">품고 맨투맨 S</div>
-    </div>
-
-    <div class="sku-standard-line">
-      <div class="sku-standard-title">4. 바코드가 없는 상품(SKU)</div>
-      <div class="example-card good">★크림5ml</div>
-      <div class="example-card bad">크림5ml</div>
-    </div>
-
+  <div class="info-box">
+    <b>4. 옵션 상품의 경우 조합형이 아닌 경우 풀필먼트 운영이 불가합니다.</b><br>
+    단독형으로 등록된 경우 SKU 등록 전 조합형으로 변경해주세요.
   </div>
 
-  <div class="notice-box" style="margin-top:24px;">
-    <p>SKU명 수정 관련 안내</p>
-    <ul>
-      <li>품고 초도입고 전 등록된 SKU명의 수정이 필요한 경우 네이버 물류지원 톡톡으로 문의 주시어 수정 가능 여부에 대해 안내 받으실 수 있습니다.</li>
-      <li>단, 바코드 수정은 불가하며 SKU명 / 소비기한 관리 여부 / 로트 관리 여부만 수정 가능합니다.</li>
-    </ul>
+  <div class="info-box">
+    <b>5. 모든 SKU 등록은 스마트스토어 판매자센터에서 직접 등록해야 합니다.</b><br>
+    ㄴ 비매품, 쇼핑백, 샘플, 리플렛 등 구매자에게 발송되는 모든 품목에 해당됩니다.
   </div>
 
   <div class="step-nav">
-    <button class="btn btn-next" onclick="openConfirmModal()">다음</button>
+    <button class="btn btn-next" onclick="changeStep(2)">다음</button>
   </div>
 
 </div>
@@ -691,6 +520,7 @@ h2 {
       <li><b>SKU 유형은 반드시 [상품]으로 선택해주세요.</b></li>
       <li><b>보관사이즈는 임의 값 1로 입력해주세요.</b></li>
       <li><b>소비기한 / 로트번호 관리는 실제 관리가 필요한 상품만 체크해주세요.</b></li>
+      <li><b>SKU 등록 후 반드시 연결 상품 설정까지 진행해야 합니다.</b></li>
     </ul>
   </div>
 
@@ -774,6 +604,11 @@ h2 {
     </tbody>
   </table>
 
+  <div class="highlight-box">
+    SKU 등록만으로는 출고가 진행되지 않습니다.<br>
+    반드시 다음 버튼을 눌러 <u>연결 상품 설정</u>까지 진행해주세요.
+  </div>
+
   <div class="step-nav">
     <button class="btn btn-prev" onclick="changeStep(1)">이전</button>
     <button class="btn btn-next" onclick="changeStep(3)">다음</button>
@@ -784,50 +619,121 @@ h2 {
 <!-- STEP3 -->
 <div id="step3" class="step-container">
 
-  <h2>SKU X 상품 연결하기</h2>
+  <h2>연결 상품 이해</h2>
 
-  <div class="guide-box green">
-    <div class="guide-title">예시</div>
-    상품명 : 품고 맨투맨<br>
-    상품번호 : 123412341234<br>
-    옵션 : S/블랙, S/아이보리, M/블랙, M/아이보리<br><br>
-    현재 등록하고 있는 SKU가 <b>품고 맨투맨 S/블랙</b>이라면,<br>
-    <b>S/블랙이 출고되어야 하는 상품번호 또는 옵션번호</b>에 매핑해야 재고 연동 및 출고가 가능합니다.
+  <div class="info-box">
+    각 SKU에 판매중인 상품번호 또는 옵션번호를 매핑하는 구조입니다.
   </div>
 
-  <div class="mapping-card-wrap">
-    <div class="mapping-card" onclick="showMappingGuide('single')">
-      <h3>단일 상품 연결 상품 매핑하기</h3>
-      <p>옵션 없이 하나의 상품번호에 SKU를 연결하는 경우</p>
-    </div>
+  <h3>예시 1. 서로 다른 SKU를 조합하여 출고하는 옵션 상품</h3>
+  <table class="mapping-table">
+    <thead>
+      <tr>
+        <th>상품번호</th>
+        <th>옵션명</th>
+        <th>매핑해야하는 SKU</th>
+        <th>주문 당 출고 수량</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="3">123456781</td>
+        <td>꽃물 틴트 체리/베리</td>
+        <td>꽃물틴트 체리 + 꽃물틴트 베리</td>
+        <td>각 1개씩</td>
+      </tr>
+      <tr>
+        <td>꽃물 틴트 체리/체리</td>
+        <td>꽃물틴트 체리</td>
+        <td>2개</td>
+      </tr>
+      <tr>
+        <td>꽃물 틴트 베리/베리</td>
+        <td>꽃물틴트 베리</td>
+        <td>2개</td>
+      </tr>
+    </tbody>
+  </table>
 
-    <div class="mapping-card" onclick="showMappingGuide('option')">
-      <h3>옵션 상품 연결 상품 매핑하기</h3>
-      <p>색상, 사이즈 등 옵션번호별로 SKU를 연결하는 경우</p>
-    </div>
+  <h3>예시 2. 동일 SKU 수량 또는 부자재가 함께 출고되는 옵션 상품</h3>
+  <table class="mapping-table">
+    <thead>
+      <tr>
+        <th>상품번호</th>
+        <th>옵션명</th>
+        <th>매핑해야하는 SKU</th>
+        <th>주문 당 출고 수량</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="3">123456788</td>
+        <td>선크림1개</td>
+        <td>선크림</td>
+        <td>1개</td>
+      </tr>
+      <tr>
+        <td>선크림2개</td>
+        <td>선크림</td>
+        <td>2개</td>
+      </tr>
+      <tr>
+        <td>선크림2개 + 쇼핑백</td>
+        <td>선크림 + 쇼핑백</td>
+        <td>선크림 2개 / 쇼핑백 1개</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>예시 3. 판매 상품은 다르지만 동일 SKU가 수량만 다르게 출고되는 경우</h3>
+  <table class="mapping-table">
+    <thead>
+      <tr>
+        <th>상품번호</th>
+        <th>상품명</th>
+        <th>매핑해야하는 SKU</th>
+        <th>주문 당 출고 수량</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>123456777</td>
+        <td>비타민 60정 1개월</td>
+        <td>비타민 60정</td>
+        <td>1개</td>
+      </tr>
+      <tr>
+        <td>123456766</td>
+        <td>비타민 60정 2개월</td>
+        <td>비타민 60정</td>
+        <td>2개</td>
+      </tr>
+      <tr>
+        <td>123456755</td>
+        <td>비타민 60정 6개월</td>
+        <td>비타민 60정</td>
+        <td>6개</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>연결 상품 등록 방법</h2>
+
+  <div class="path-text">
+    연결 상품 &gt; 상품 불러오기 클릭
   </div>
 
-  <div id="singleGuide" class="mapping-detail">
-    <h3>단일 상품 연결 방법</h3>
-    <ol>
-      <li>스마트스토어 &gt; N배송 관리 &gt; N배송 재고관리 &gt; 상품-SKU 연결 현황으로 이동해주세요.</li>
-      <li>연결이 필요한 상품번호를 검색해주세요.</li>
-      <li>해당 상품번호에 실제 출고되어야 하는 SKU를 선택해주세요.</li>
-      <li>주문당 출고수량을 확인해주세요. 기본 수량은 1개입니다.</li>
-      <li>저장 후 연결상품수 및 SKU명이 정상 반영되었는지 확인해주세요.</li>
-    </ol>
+  <div class="connect-image-box">
+    <img src="connect.png" alt="연결 상품 등록 화면" onerror="this.parentElement.style.display='none'">
   </div>
 
-  <div id="optionGuide" class="mapping-detail">
-    <h3>옵션 상품 연결 방법</h3>
-    <ol>
-      <li>스마트스토어 &gt; N배송 관리 &gt; N배송 재고관리 &gt; 상품-SKU 연결 현황으로 이동해주세요.</li>
-      <li>연결이 필요한 상품번호 또는 옵션번호를 검색해주세요.</li>
-      <li>각 옵션별로 실제 출고되어야 하는 SKU를 각각 매핑해주세요.</li>
-      <li>예: S/블랙 옵션에는 품고 맨투맨 S 블랙 SKU를 연결합니다.</li>
-      <li>옵션별 SKU가 뒤바뀌지 않았는지 SKU명과 바코드를 함께 확인해주세요.</li>
-      <li>저장 후 전체 옵션의 연결 상태를 다시 확인해주세요.</li>
-    </ol>
+  <div class="notice-box">
+    <ul>
+      <li><b>단일 판매 상품</b>인 경우 상품번호를 체크합니다.</li>
+      <li><b>옵션 판매 상품</b>인 경우 반드시 ▼ 버튼을 눌러 옵션 펼치기 후, 매핑해야 하는 옵션 번호를 체크합니다.</li>
+      <li>선택이 완료된 경우 <b>연결상품 추가</b> 클릭 후 주문당 출고수량을 입력해주세요.</li>
+      <li>입력이 완료되면 <b>저장하기</b>를 클릭해주세요.</li>
+    </ul>
   </div>
 
   <div class="step-nav">
@@ -837,18 +743,6 @@ h2 {
 
 </div>
 
-</div>
-
-<!-- 확인 모달 -->
-<div id="confirmModal" class="modal-backdrop">
-  <div class="modal">
-    <h3>필수 확인사항 확인 완료</h3>
-    <p>
-      SKU 기준 및 입력 기준을 모두 확인하신 것으로 간주하고,<br>
-      다음 단계에서 SKU 등록 과정을 안내드립니다.
-    </p>
-    <button class="btn btn-next" onclick="goStep2()">확인했습니다</button>
-  </div>
 </div>
 
 <script>
@@ -862,23 +756,6 @@ function changeStep(stepNumber) {
   });
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function openConfirmModal() {
-  document.getElementById('confirmModal').style.display = 'block';
-}
-
-function goStep2() {
-  document.getElementById('confirmModal').style.display = 'none';
-  changeStep(2);
-}
-
-function showMappingGuide(type) {
-  document.getElementById('singleGuide').classList.remove('active');
-  document.getElementById('optionGuide').classList.remove('active');
-
-  if (type === 'single') document.getElementById('singleGuide').classList.add('active');
-  if (type === 'option') document.getElementById('optionGuide').classList.add('active');
 }
 
 function toggleFAQ() {

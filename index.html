@@ -49,7 +49,7 @@ body {
 }
 
 h2 {
-  color:#00c73c;
+  color:#111;
   font-size:22px;
   margin-top:30px;
 }
@@ -78,11 +78,11 @@ h2 {
 }
 
 .step-dot.active {
-  color:#00c73c;
+  color:#0040D1;
 }
 
 .step-dot.active .circle {
-  background:#00c73c;
+  background:#0040D1;
 }
 
 .step-container {
@@ -109,6 +109,97 @@ h2 {
 
 .notice-box li {
   margin-bottom:12px;
+}
+
+.info-box {
+  background:#f8f9fa;
+  border:1px solid #e4e8eb;
+  border-radius:12px;
+  padding:22px;
+  margin-bottom:18px;
+}
+
+.info-box b {
+  color:#111;
+}
+
+.sku-image-box {
+  margin:18px 0 24px;
+  border:1px solid #e4e8eb;
+  border-radius:12px;
+  overflow:hidden;
+  background:#fff;
+  text-align:center;
+}
+
+.sku-image-box img {
+  max-width:100%;
+  display:block;
+  margin:0 auto;
+}
+
+.option-visual {
+  background:#f8f9fa;
+  border:1px solid #e4e8eb;
+  border-radius:14px;
+  padding:24px;
+  margin-top:18px;
+}
+
+.option-flow {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+  margin:22px 0;
+}
+
+.option-circle {
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  background:#0040D1;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-weight:900;
+  line-height:1.4;
+}
+
+.option-plus {
+  font-size:28px;
+  font-weight:900;
+  color:#0040D1;
+}
+
+.sku-count {
+  text-align:center;
+  font-size:22px;
+  font-weight:900;
+  color:#0040D1;
+  margin-top:12px;
+}
+
+.option-example-table {
+  width:100%;
+  border-collapse:collapse;
+  margin-top:18px;
+  background:#fff;
+}
+
+.option-example-table th,
+.option-example-table td {
+  border:1px solid #e4e8eb;
+  padding:14px;
+  text-align:center;
+}
+
+.option-example-table th {
+  background:#f1f4ff;
+  color:#111;
 }
 
 .path-text {
@@ -149,7 +240,7 @@ h2 {
 }
 
 .sku-head-good {
-  background:#0066cc;
+  background:#0040D1;
   color:#fff;
 }
 
@@ -181,7 +272,7 @@ h2 {
 }
 
 .example-card.good {
-  background:#0066cc;
+  background:#0040D1;
   color:#fff;
 }
 
@@ -259,13 +350,13 @@ h2 {
 }
 
 .mapping-card:hover {
-  border-color:#00c73c;
-  background:#f3fff7;
+  border-color:#0040D1;
+  background:#f3f6ff;
   transform:translateY(-3px);
 }
 
 .mapping-card h3 {
-  color:#00c73c;
+  color:#0040D1;
   margin-top:0;
 }
 
@@ -301,7 +392,7 @@ h2 {
 }
 
 .btn-next {
-  background:#00c73c;
+  background:#0040D1;
   color:#fff;
 }
 
@@ -331,8 +422,8 @@ h2 {
 .faq-btn {
   position:fixed;
   right:24px;
-  bottom:32px;
-  background:#00c73c;
+  top:24px;
+  background:#0040D1;
   color:#fff;
   border:none;
   border-radius:999px;
@@ -340,13 +431,14 @@ h2 {
   font-weight:800;
   cursor:pointer;
   box-shadow:0 6px 16px rgba(0,0,0,.18);
+  z-index:9998;
 }
 
 .faq-panel {
   display:none;
   position:fixed;
   right:24px;
-  bottom:92px;
+  top:82px;
   width:380px;
   max-width:calc(100% - 48px);
   max-height:70vh;
@@ -362,7 +454,7 @@ h2 {
 }
 
 .faq-header {
-  background:#00c73c;
+  background:#0040D1;
   color:#fff;
   padding:16px 18px;
   font-weight:800;
@@ -420,21 +512,63 @@ h2 {
   .mapping-card-wrap {
     grid-template-columns:1fr;
   }
+
+  .option-circle {
+    width:96px;
+    height:96px;
+    font-size:14px;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<button class="faq-btn" onclick="toggleFAQ()">자주하는 질문</button>
+
+<div id="faqPanel" class="faq-panel">
+  <div class="faq-header">
+    <span>자주하는 질문</span>
+    <span style="cursor:pointer;" onclick="toggleFAQ()">×</span>
+  </div>
+
+  <div class="faq-body">
+    <div class="faq-item">
+      <div class="faq-q">Q. 사은품도 SKU 유형을 상품으로 등록해야 하나요?</div>
+      <div class="faq-a">네. 사은품, 샘플, 쇼핑백 등 출고되는 모든 SKU는 상품으로 등록해야 재고 연동이 가능합니다.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q. 바코드가 없는 상품은 어떻게 등록하나요?</div>
+      <div class="faq-a">네이버 바코드를 선택하여 등록해주세요. 단, 출고 시 스캔 검수가 필요한 경우 실물에도 스캔 가능한 바코드가 부착되어 있어야 합니다.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q. SKU명을 잘못 등록했는데 수정 가능한가요?</div>
+      <div class="faq-a">초도입고 전이라면 네이버 물류지원 톡톡으로 문의 후 수정 가능 여부를 확인할 수 있습니다. 단, 바코드 수정은 불가합니다.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q. 소비기한/로트 관리는 모두 체크해야 하나요?</div>
+      <div class="faq-a">아니요. 실제 관리가 필요한 상품만 체크해주세요. 불필요한 상품을 관리로 등록할 경우 운영이 어려워질 수 있습니다.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q. 상품 조회/수정에서 일괄 등록하면 안 되나요?</div>
+      <div class="faq-a">권장하지 않습니다. 동일 SKU가 여러 상품번호에 걸려 있는 경우 미입력 SKU 목록만 증가할 수 있고, 스마트스토어 내 SKU 정보는 삭제가 불가합니다.</div>
+    </div>
+  </div>
+</div>
+
 <div class="container">
 
 <header class="page-header">
-  <img src="Symbol Type Logo.png" class="page-logo" alt="품고 로고" onerror="this.style.display='none'">
+  <img src="Primary Logo.png" class="page-logo" alt="품고 로고" onerror="this.style.display='none'">
   <h1 class="page-title">SKU & 연결상품 등록 가이드</h1>
 </header>
 
 <div class="progress-bar">
-  <div class="step-dot active" id="dot1"><div class="circle">1</div>필수 확인</div>
+  <div class="step-dot active" id="dot1"><div class="circle">1</div>SKU 기준</div>
   <div class="step-dot" id="dot2"><div class="circle">2</div>SKU 등록</div>
   <div class="step-dot" id="dot3"><div class="circle">3</div>상품 연결</div>
 </div>
@@ -442,27 +576,59 @@ h2 {
 <!-- STEP1 -->
 <div id="step1" class="step-container active">
 
-  <h2>등록 전 필수 확인 사항</h2>
+  <h2>SKU 기준</h2>
 
-  <div class="notice-box">
-    <p>SKU 등록 전 아래 내용을 반드시 확인해주세요.</p>
-    <ul>
-      <li>
-        <b>모든 SKU는 스마트스토어 판매자센터를 통해 등록되어야 합니다.</b><br>
-        ㄴ 쇼핑백, 사은품, 부자재 등 모든 출고에 적용되는 SKU 전체
-      </li>
-      <li>
-        <b>모든 SKU는 [상품]으로 등록되어야 합니다.</b>
-      </li>
-      <li>
-        <b>상품 조회/수정에서 일괄 등록은 진행하지 않도록 유의 부탁드립니다.</b><br>
-        ㄴ 동일한 SKU가 출고되는 상품번호를 여러 개로 운영 중인 경우 미입력된 SKU 목록만 증가하게 됩니다.<br>
-        ㄴ 스마트스토어 내 SKU 정보는 삭제가 불가하므로 필히 안내드리는 가이드대로 SKU 등록 진행 부탁드립니다.
-      </li>
-      <li>
-        <b>실물 바코드와 동일한 바코드로 등록되어야 하며, 오등록 시 수정이 불가하기 때문에 정확한 등록 부탁드리겠습니다.</b>
-      </li>
-    </ul>
+  <div class="info-box">
+    <b>1. SKU의 기준은 바코드 기준으로 구분합니다.</b>
+  </div>
+
+  <div class="info-box">
+    <b>2. 구성이 다른 SKU는 각각의 고유 바코드가 존재해야 하며, 동일한 바코드로 운영이 불가합니다.</b>
+
+    <div class="sku-image-box">
+      <img src="SKU.png" alt="SKU 기준 이미지" onerror="this.parentElement.style.display='none'">
+    </div>
+  </div>
+
+  <div class="info-box">
+    <b>3. 옵션 상품도 각 옵션별로 1개의 SKU로 구분합니다.</b>
+
+    <table class="option-example-table">
+      <thead>
+        <tr>
+          <th>상품명</th>
+          <th>사이즈</th>
+          <th>색상</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="3"><b>맨투맨</b></td>
+          <td>S</td>
+          <td>블랙 / 아이보리 / 블루 / 그레이</td>
+        </tr>
+        <tr>
+          <td>M</td>
+          <td>블랙 / 아이보리 / 블루 / 그레이</td>
+        </tr>
+        <tr>
+          <td>L</td>
+          <td>블랙 / 아이보리 / 블루 / 그레이</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="option-visual">
+      <div class="option-flow">
+        <div class="option-circle">상품명<br>맨투맨</div>
+        <div class="option-plus">×</div>
+        <div class="option-circle">사이즈<br>3개</div>
+        <div class="option-plus">×</div>
+        <div class="option-circle">색상<br>4개</div>
+      </div>
+
+      <div class="sku-count">총 SKU 수 = 12개</div>
+    </div>
   </div>
 
   <h2>SKU명 입력 기준</h2>
@@ -678,47 +844,10 @@ h2 {
   <div class="modal">
     <h3>필수 확인사항 확인 완료</h3>
     <p>
-      등록 전 필수 확인사항을 모두 확인하신 것으로 간주하고,<br>
+      SKU 기준 및 입력 기준을 모두 확인하신 것으로 간주하고,<br>
       다음 단계에서 SKU 등록 과정을 안내드립니다.
     </p>
     <button class="btn btn-next" onclick="goStep2()">확인했습니다</button>
-  </div>
-</div>
-
-<!-- FAQ -->
-<button class="faq-btn" onclick="toggleFAQ()">자주하는 질문</button>
-
-<div id="faqPanel" class="faq-panel">
-  <div class="faq-header">
-    <span>자주하는 질문</span>
-    <span style="cursor:pointer;" onclick="toggleFAQ()">×</span>
-  </div>
-
-  <div class="faq-body">
-    <div class="faq-item">
-      <div class="faq-q">Q. 사은품도 SKU 유형을 상품으로 등록해야 하나요?</div>
-      <div class="faq-a">네. 사은품, 샘플, 쇼핑백 등 출고되는 모든 SKU는 상품으로 등록해야 재고 연동이 가능합니다.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Q. 바코드가 없는 상품은 어떻게 등록하나요?</div>
-      <div class="faq-a">네이버 바코드를 선택하여 등록해주세요. 단, 출고 시 스캔 검수가 필요한 경우 실물에도 스캔 가능한 바코드가 부착되어 있어야 합니다.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Q. SKU명을 잘못 등록했는데 수정 가능한가요?</div>
-      <div class="faq-a">초도입고 전이라면 네이버 물류지원 톡톡으로 문의 후 수정 가능 여부를 확인할 수 있습니다. 단, 바코드 수정은 불가합니다.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Q. 소비기한/로트 관리는 모두 체크해야 하나요?</div>
-      <div class="faq-a">아니요. 실제 관리가 필요한 상품만 체크해주세요. 불필요한 상품을 관리로 등록할 경우 운영이 어려워질 수 있습니다.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q">Q. 상품 조회/수정에서 일괄 등록하면 안 되나요?</div>
-      <div class="faq-a">권장하지 않습니다. 동일 SKU가 여러 상품번호에 걸려 있는 경우 미입력 SKU 목록만 증가할 수 있고, 스마트스토어 내 SKU 정보는 삭제가 불가합니다.</div>
-    </div>
   </div>
 </div>
 

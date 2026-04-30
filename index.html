@@ -524,116 +524,106 @@
     </div>
   </div>
 
-  <!-- STEP 2 -->
-  <div id="step2" class="step-container">
-    <h2>1. SKU 등록 경로</h2>
+ <div id="step2" class="step-container">
 
-    <div class="path-text">
-      스마트스토어 &gt; N배송 관리 &gt; N배송 재고관리 &gt; SKU 등록
-    </div>
+  <h2>1. SKU 등록 경로</h2>
 
-    <div class="mock-image">
-      이미지 삽입 영역 1<br>
-      예: SKU 등록 메뉴 화면
-    </div>
+  <div class="path-text">
+    스마트스토어 > N배송 관리 > N배송 재고관리 > SKU 등록
+  </div>
 
-    <h2>2. SKU 기본정보 입력</h2>
+  <h2>2. SKU 기본정보 입력</h2>
 
-<div class="mock-image">
-  이미지 삽입 영역<br>
-  (SKU 입력 화면 캡쳐)
+  <table style="width:100%; border-collapse:collapse; font-size:14px; border:1px solid #e4e8eb; border-radius:10px; overflow:hidden;">
+    
+    <thead>
+      <tr style="background:#f8f9fa;">
+        <th style="padding:14px; border-bottom:1px solid #e4e8eb; width:180px; text-align:left;">항목</th>
+        <th style="padding:14px; border-bottom:1px solid #e4e8eb; text-align:left;">설명</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr>
+        <td style="padding:16px; border-bottom:1px solid #f1f1f1; font-weight:700;">SKU명</td>
+        <td style="padding:16px; border-bottom:1px solid #f1f1f1; line-height:1.7;">
+          ▪️ 실제 출고되는 상품(SKU)명으로 입력해주세요.<br>
+          ▪️ 옵션 상품은 옵션까지 포함하여 입력해주세요.<br>
+          ▪️ 단수 출고 상품은 <b>(송장만부착)</b> 입력 필수<br>
+          ▪️ 바코드 미검수 상품은 <b>★</b> 입력 필수
+        </td>
+      </tr>
+
+      <tr>
+        <td style="padding:16px; border-bottom:1px solid #f1f1f1; font-weight:700;">바코드</td>
+        <td style="padding:16px; border-bottom:1px solid #f1f1f1; line-height:1.7;">
+          <b>[판매자 입력]</b><br>
+          ▪️ 실물 바코드와 동일하게 입력<br>
+          ▪️ 앞뒤 공백 입력 불가<br><br>
+
+          <b>[네이버 바코드]</b><br>
+          ▪️ 바코드 없는 상품 선택<br>
+          ▪️ 추후 바코드 생성 예정인 경우 선택
+        </td>
+      </tr>
+
+      <tr>
+        <td style="padding:16px; border-bottom:1px solid #f1f1f1; font-weight:700;">보관온도</td>
+        <td style="padding:16px;">상온</td>
+      </tr>
+
+      <tr>
+        <td style="padding:16px; border-bottom:1px solid #f1f1f1; font-weight:700;">소비기한 관리</td>
+        <td style="padding:16px;">필요한 상품만 체크</td>
+      </tr>
+
+      <tr>
+        <td style="padding:16px; border-bottom:1px solid #f1f1f1; font-weight:700;">로트번호 관리</td>
+        <td style="padding:16px;">필요한 상품만 체크</td>
+      </tr>
+
+      <tr>
+        <td style="padding:16px; border-bottom:1px solid #f1f1f1; font-weight:700; color:#d9534f;">유의사항</td>
+        <td style="padding:16px; color:#d9534f; line-height:1.7;">
+          ※ 관리하지 않는 상품을 관리로 설정할 경우 운영이 어려워질 수 있습니다.
+        </td>
+      </tr>
+
+      <tr>
+        <td style="padding:16px; border-bottom:1px solid #f1f1f1; font-weight:700;">보관사이즈</td>
+        <td style="padding:16px;">
+          초도 입고 시 자동 측정되며 <b>1 입력</b>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="padding:16px; font-weight:700;">SKU 유형</td>
+        <td style="padding:16px; line-height:1.7;">
+          <b>상품</b><br>
+          ▪️ 사은품 선택 시 재고 연동 불가<br>
+          ▪️ 모든 SKU는 상품으로 등록
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <div class="notice-box" style="margin-top:20px;">
+    <p>핵심 체크 포인트</p>
+    <ul>
+      <li>SKU 유형 = 상품 (필수)</li>
+      <li>보관사이즈 = 1 입력</li>
+      <li>관리 항목은 필요한 경우만 체크</li>
+    </ul>
+  </div>
+
+  <div class="step-nav">
+    <button class="btn-nav btn-prev" onclick="changeStep(1)">⬅ 이전</button>
+    <button class="btn-nav btn-next" onclick="changeStep(3)">다음 ➔</button>
+  </div>
+
 </div>
-
-<table style="width:100%; border-collapse:collapse; font-size:14px; border:1px solid #e4e8eb; border-radius:10px; overflow:hidden;">
-  
-  <thead>
-    <tr style="background:#f8f9fa;">
-      <th style="padding:14px; border-bottom:1px solid #e4e8eb; width:180px; text-align:left;">항목</th>
-      <th style="padding:14px; border-bottom:1px solid #e4e8eb; text-align:left;">설명</th>
-    </tr>
-  </thead>
-
-  <tbody>
-
-    <!-- SKU명 -->
-    <tr>
-      <td style="padding:16px; border-bottom:1px solid #f1f1f1; font-weight:700;">SKU명</td>
-      <td style="padding:16px; border-bottom:1px solid #f1f1f1; line-height:1.7;">
-        ▪️ 스마트스토어 판매 상품명이 아닌 실제 출고되는 상품(SKU)명으로 입력해주세요.<br>
-        ▪️ 옵션 상품은 상품(SKU)명에 옵션까지 포함하여 입력해주세요.<br>
-        ▪️ 단수 출고 상품은 <b>(송장만부착)</b>을 필수로 입력해주세요.<br>
-        ▪️ 바코드 미검수 상품은 <b>★</b>을 필수로 입력해주세요.
-      </td>
-    </tr>
-
-    <!-- 바코드 -->
-    <tr>
-      <td style="padding:16px; border-bottom:1px solid #f1f1f1; font-weight:700;">바코드</td>
-      <td style="padding:16px; border-bottom:1px solid #f1f1f1; line-height:1.7;">
-        <b>[판매자 입력]</b><br>
-        ▪️ 실물 바코드와 동일하게 입력해주세요.<br>
-        ▪️ 바코드 숫자 앞/뒤에는 공백을 포함할 수 없습니다.<br><br>
-
-        <b>[네이버 바코드]</b><br>
-        ▪️ 바코드 미검수 상품 등록 시 체크해주세요.<br>
-        ▪️ 실물에 바코드가 없으나 생성 후 운영 예정인 경우 체크해주세요.
-      </td>
-    </tr>
-
-    <!-- 보관온도 -->
-    <tr>
-      <td style="padding:16px; border-bottom:1px solid #f1f1f1; font-weight:700;">보관온도</td>
-      <td style="padding:16px; border-bottom:1px solid #f1f1f1;">
-        상온
-      </td>
-    </tr>
-
-    <!-- 소비기한 -->
-    <tr>
-      <td style="padding:16px; border-bottom:1px solid #f1f1f1; font-weight:700;">소비기한 관리여부</td>
-      <td style="padding:16px; border-bottom:1px solid #f1f1f1;">
-        소비기한 관리가 필요한 상품(SKU)만 관리로 체크해주세요.
-      </td>
-    </tr>
-
-    <!-- 로트번호 -->
-    <tr>
-      <td style="padding:16px; border-bottom:1px solid #f1f1f1; font-weight:700;">로트번호 관리여부</td>
-      <td style="padding:16px; border-bottom:1px solid #f1f1f1;">
-        로트번호 관리가 필요한 상품(SKU)만 관리로 체크해주세요.
-      </td>
-    </tr>
-
-    <!-- 주의사항 -->
-    <tr>
-      <td style="padding:16px; border-bottom:1px solid #f1f1f1; font-weight:700; color:#d9534f;">유의사항</td>
-      <td style="padding:16px; border-bottom:1px solid #f1f1f1; line-height:1.7; color:#d9534f;">
-        ※ 관리하지 않으나 관리로 체크할 경우 원활한 운영이 어렵습니다.<br>
-        ※ 실제 관리가 필요한 상품(SKU)만 체크하여 등록해주세요.
-      </td>
-    </tr>
-
-    <!-- 보관사이즈 -->
-    <tr>
-      <td style="padding:16px; border-bottom:1px solid #f1f1f1; font-weight:700;">보관사이즈</td>
-      <td style="padding:16px; border-bottom:1px solid #f1f1f1;">
-        초도 입고 시 체적 정보를 측정하여 자동 업데이트됩니다.<br>
-        임의 값 <b>1</b>로 입력해주세요.
-      </td>
-    </tr>
-
-    <!-- SKU 유형 -->
-    <tr>
-      <td style="padding:16px; font-weight:700;">SKU 유형</td>
-      <td style="padding:16px; line-height:1.7;">
-        <b>상품</b><br>
-        ▪️ 사은품으로 선택 시 재고 연동이 되지 않습니다.<br>
-        ▪️ 사은품, 샘플, 쇼핑백 등 모든 SKU는 상품으로 등록해주세요.
-      </td>
-    </tr>
-
-  </tbody>
-</table>
 
   <!-- STEP 3 -->
   <div id="step3" class="step-container">

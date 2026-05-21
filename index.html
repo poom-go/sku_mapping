@@ -523,6 +523,62 @@ h3 {
     right:20px;
   }
 }
+/* SKU명 규칙 + 예시 레이아웃 */
+.sku-rule-block {
+  padding:18px 16px;
+  border-bottom:1px solid #e4e8eb;
+}
+.sku-rule-title {
+  font-size:14px;
+  color:#111;
+  margin-bottom:12px;
+  line-height:1.6;
+}
+.sku-eg-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.sku-eg-bad,
+.sku-eg-good {
+  border-radius:8px;
+  padding:12px 14px;
+}
+.sku-eg-bad {
+  background:#fff5f5;
+  border:1px solid #ffd6d6;
+}
+.sku-eg-good {
+  background:#f0faf4;
+  border:1px solid #b6e4c8;
+}
+.sku-eg-label {
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:0.04em;
+  margin-bottom:7px;
+}
+.sku-eg-label.bad  { color:#d93025; }
+.sku-eg-label.good { color:#1a7f44; }
+.sku-eg-text {
+  font-size:13px;
+  color:#333;
+  line-height:1.7;
+}
+.sku-case {
+  display:inline-block;
+  background:#0040D1;
+  color:#fff;
+  font-size:11px;
+  font-weight:900;
+  border-radius:4px;
+  padding:1px 7px;
+  margin-bottom:3px;
+  vertical-align:middle;
+}
+@media(max-width:600px){
+  .sku-eg-grid { grid-template-columns:1fr; }
+}
 </style>
 </head>
 
@@ -685,11 +741,71 @@ h3 {
     <tbody>
       <tr>
         <td>SKU명</td>
-        <td>
-          ▪️ 스마트스토어 판매 상품명이 아닌 실제 출고되는 상품(SKU)명으로 입력해주세요.<br>
-          ▪️ 옵션 상품은 상품(SKU)명에 옵션까지 포함하여 입력해주세요.<br>
-          ▪️ 단수 출고 상품은 상품(SKU)명에 <b>(송장만부착)</b>을 필수로 입력해주세요.<br>
-          ▪️ 바코드 미검수 상품은 상품(SKU)명에 <b>★</b>을 필수로 입력해주세요.
+        <td style="padding:0;">
+
+          <!-- 규칙 1 -->
+          <div class="sku-rule-block">
+            <div class="sku-rule-title">▪️ 스마트스토어 판매 상품명이 아닌 <b>실제 출고되는 상품(SKU)명</b>으로 입력해주세요.</div>
+            <div class="sku-eg-grid">
+              <div class="sku-eg-bad">
+                <div class="sku-eg-label bad">❌ 잘못된 예시</div>
+                <div class="sku-eg-text">알칼리 세탁세제 플로럴 2.5L 4개 액체 빨래 쉰내 쉰냄새 제거 대용량 일반 드럼</div>
+              </div>
+              <div class="sku-eg-good">
+                <div class="sku-eg-label good">✅ 올바른 예시</div>
+                <div class="sku-eg-text">
+                  <span class="sku-case">낱개 4개 출고</span> 알칼리 세탁세제(플로럴) 2.5L<br>
+                  <span class="sku-case">1BOX 출고</span> (송장만부착)알칼리 세탁세제 플로럴 2.5L*4개
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 규칙 2 -->
+          <div class="sku-rule-block">
+            <div class="sku-rule-title">▪️ <b>옵션 상품</b>은 상품(SKU)명에 옵션까지 포함하여 입력해주세요.</div>
+            <div class="sku-eg-grid">
+              <div class="sku-eg-bad">
+                <div class="sku-eg-label bad">❌ 잘못된 예시</div>
+                <div class="sku-eg-text">꽃물틴트로 SKU명은 통일하고 바코드만 상이한 경우</div>
+              </div>
+              <div class="sku-eg-good">
+                <div class="sku-eg-label good">✅ 올바른 예시</div>
+                <div class="sku-eg-text">꽃물틴트 1호 / 꽃물틴트 2호<br>꽃물틴트 베리 / 꽃물틴트 체리</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 규칙 3 -->
+          <div class="sku-rule-block">
+            <div class="sku-rule-title">▪️ <b>단수 출고 상품</b>은 SKU명에 <b style="color:#0040D1;">(송장만부착)</b>을 필수로 입력해주세요.</div>
+            <div class="sku-eg-grid">
+              <div class="sku-eg-bad">
+                <div class="sku-eg-label bad">❌ 잘못된 예시</div>
+                <div class="sku-eg-text">차박 텐트 베이지</div>
+              </div>
+              <div class="sku-eg-good">
+                <div class="sku-eg-label good">✅ 올바른 예시</div>
+                <div class="sku-eg-text">(송장만부착)차박 텐트 베이지</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 규칙 4 -->
+          <div class="sku-rule-block" style="border-bottom:none;">
+            <div class="sku-rule-title">▪️ <b>바코드 미검수 상품</b>은 SKU명에 <b style="color:#0040D1;">★</b>을 필수로 입력해주세요.</div>
+            <div class="sku-eg-grid">
+              <div class="sku-eg-bad">
+                <div class="sku-eg-label bad">❌ 잘못된 예시</div>
+                <div class="sku-eg-text">비매품)쇼핑백<br>비매품)샘플5종세트</div>
+              </div>
+              <div class="sku-eg-good">
+                <div class="sku-eg-label good">✅ 올바른 예시</div>
+                <div class="sku-eg-text">★쇼핑백<br>★샘플5종세트</div>
+              </div>
+            </div>
+          </div>
+
         </td>
       </tr>
 
